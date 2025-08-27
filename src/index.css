@@ -1,0 +1,8 @@
+@import "tailwindcss";
+.hero-wrapper {
+  background-image: url('../assets/50.png'); /* Adjust path if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
