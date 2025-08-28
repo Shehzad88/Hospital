@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import logo from '../assets/logo (3).png'; // Import the logo correctly
 
 const Footer = () => {
   return (
@@ -7,8 +8,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8">
         {/* Left section */}
         <div className="md:w-1/3">
-          <img src="/src/assets/logo (3).png" alt="FlamSafe Logo" className="mb-3 w-32" />
-          <p className="mb-4">Feel free to call us in working hours Mon – Fri (8:00 – 16:00). Our team will be happy to help answer your queries</p>
+          <img src={logo} alt="FlamSafe Logo" className="mb-3 w-32" />
+          <p className="mb-4">
+            Feel free to call us in working hours Mon – Fri (8:00 – 16:00). Our team will be happy to help answer your queries
+          </p>
           <div className="flex gap-3 text-white">
             <div className="w-8 h-8 bg-[#8bc34a] rounded-full flex items-center justify-center">
               <FaFacebookF />

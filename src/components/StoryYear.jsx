@@ -1,6 +1,7 @@
-import react from 'react';
+import React from 'react';
+
 export default function StoryYear() {
-   const storyItems = [
+  const storyItems = [
     {
       year: "2010",
       title: "Inception of FlamSafe",
@@ -26,12 +27,12 @@ export default function StoryYear() {
       <div className="w-full p-6">
         <div className="text-left mb-6 relative">
           <h2 className="text-3xl font-bold mb-4">Our Story</h2>
-          <button className="absolute -top-1 cursor-pointer right-0 bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800">
+          <button className="absolute -top-1 right-0 bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 cursor-pointer">
             LEARN MORE
           </button>
         </div>
 
-        <div className="bg-green-50 rounded-xl p-6 space-y-16 rounded-full">
+        <div className="bg-green-50 rounded-xl p-6 space-y-16">
           {storyItems.map((item, idx) => (
             <div
               key={idx}
@@ -43,9 +44,7 @@ export default function StoryYear() {
               <div className="md:w-4/5">
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {item.title}
-                    </h3>
+                    <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
                     <p className="text-sm text-gray-600 mt-2">{item.description}</p>
                   </div>
                   <div className="ml-4 mt-1">
@@ -58,11 +57,7 @@ export default function StoryYear() {
                         stroke="currentColor"
                         className="w-4 h-4 text-green-700"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
                   </div>
@@ -73,5 +68,5 @@ export default function StoryYear() {
         </div>
       </div>
     </div>
-     );
+  );
 }

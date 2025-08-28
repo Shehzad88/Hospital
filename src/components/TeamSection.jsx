@@ -21,7 +21,7 @@ const teamMembers = [
 const TeamSection = () => {
   return (
     <section className="bg-white py-16 px-4 sm:px-6 lg:px-20">
-      
+      {/* Header */}
       <div className="max-w-4xl mx-auto text-center mb-12">
         <p className="text-green-500 font-semibold text-sm uppercase">Our Team</p>
         <h2 className="text-3xl sm:text-4xl font-bold mt-2">Team of Compassionate Experts</h2>
@@ -30,21 +30,21 @@ const TeamSection = () => {
         </button>
       </div>
 
-      
+      {/* Team Grid */}
       <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
         {teamMembers.map((member, idx) => (
           <div
             key={idx}
             className="bg-white rounded-lg border shadow-md overflow-hidden text-center"
           >
-            
+            {/* Image */}
             <img
               src={member.image}
               alt={member.name}
               className="w-full h-[300px] object-cover"
             />
 
-            
+            {/* Info */}
             <div className="p-4">
               <h3 className="text-lg font-semibold">{member.name}</h3>
               <p className="text-sm text-gray-500">{member.title}</p>

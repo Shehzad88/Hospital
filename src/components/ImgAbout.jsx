@@ -1,8 +1,17 @@
-import React from 'react'
+// src/components/ImgAbout.jsx
+import React from 'react';
+
+// ✅ Import images
+import ceoImg from '../assets/39.jpg';
+import client1 from '../assets/Logo Client 1.png';
+import client2 from '../assets/Logo Client 2.png';
+import client3 from '../assets/Logo Client 3.png';
+import client4 from '../assets/Logo Client 4.png';
+import client5 from '../assets/Logo Client 5.png';
 
 const ImgAbout = () => {
   return (
-       <div className="bg-white px-6 md:px-20 py-16">
+    <div className="bg-white px-6 md:px-20 py-16">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         {/* Left Side */}
         <div className="space-y-6">
@@ -18,7 +27,7 @@ const ImgAbout = () => {
           {/* CEO Message Card */}
           <div className="flex items-center bg-white rounded-xl shadow-sm border p-4 gap-4">
             <img
-              src="/src/assets/39.jpg"
+              src={ceoImg}
               alt="CEO"
               className="w-40 h-44 rounded-xl object-cover"
             />
@@ -32,7 +41,7 @@ const ImgAbout = () => {
                 Gravida placerat viverra purus sed ac ultricies sem nulla.
               </p>
               <p className="text-sm font-semibold text-green-600">
-                Shezad Ahmed <br />
+                Shehzad Ahmed <br />
                 <span className="text-xs font-normal">CEO, FlamSafe</span>
               </p>
             </div>
@@ -85,15 +94,17 @@ const ImgAbout = () => {
           </div>
         </div>
       </div>
-      <div className="imges flex flex-wrap gap-32 mt-22 items-center justify-center">
-        <img src="/src/assets/Logo Client 1.png" alt="" />
-        <img src="/src/assets/Logo Client 2.png" alt="" />
-        <img src="/src/assets/Logo Client 3.png" alt="" />
-        <img src="/src/assets/Logo Client 4.png" alt="" />
-        <img src="/src/assets/Logo Client 5.png" alt="" />
+
+      {/* Client Logos */}
+      <div className="flex flex-wrap gap-32 mt-22 items-center justify-center">
+        <img src={client1} alt="Client 1" />
+        <img src={client2} alt="Client 2" />
+        <img src={client3} alt="Client 3" />
+        <img src={client4} alt="Client 4" />
+        <img src={client5} alt="Client 5" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ImgAbout
+export default ImgAbout;

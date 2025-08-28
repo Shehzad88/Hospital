@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutImg from '../assets/33.jpg';
+import aboutImg from '../assets/33.jpg';  // ✅ import image from src/assets
 
 import ImgAbout from '../components/ImgAbout.jsx';
 import StoryYear from '../components/StoryYear.jsx';
@@ -15,7 +15,7 @@ const AboutUs = () => {
     <div className="w-full">
       <div className="relative h-screen w-full overflow-hidden">
         <img
-          src={aboutImg}
+          src={aboutImg}   // ✅ use imported image
           alt="About Us"
           className="h-full w-full object-cover object-top absolute -top-10 inset-x-0 z-0"
         />

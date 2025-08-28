@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import doctorImg from "../assets/7.jpg"; // Replace with your image
+import doctorImg from "../assets/7.jpg";
 
 const faqs = [
   {
@@ -43,15 +43,13 @@ const FAQSection = () => {
               <button
                 onClick={() => toggleFAQ(index)}
                 className={`w-full text-left px-6 py-4 font-medium text-sm md:text-base flex justify-between items-center ${
-                  activeIndex === index
-                    ? "bg-green-100 text-green-800"
-                    : "bg-gray-50 text-gray-800"
+                  activeIndex === index ? "bg-green-100 text-green-800" : "bg-gray-50 text-gray-800"
                 }`}
               >
                 {faq.question}
                 <span className="ml-4">{activeIndex === index ? "▲" : "▼"}</span>
               </button>
-              {activeIndex === index && faq.answer && (
+              {activeIndex === index && (
                 <div className="px-6 pb-4 text-sm text-gray-600">{faq.answer}</div>
               )}
             </div>

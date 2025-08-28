@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import doctorImg from "../assets/4.jpg"; // Replace with your image
+
+// ✅ Import doctor image
+import doctorImg from "/src/assets/4.jpg"; // Make sure this path is correct
 
 const faqs = [
   {
@@ -56,45 +58,43 @@ const Question = () => {
         {/* Left: FAQ Accordion */}
         <div className="w-full md:w-1/2">
           <p className="text-sm text-green-600 font-semibold mb-2">🌟 FAQ</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Your Questions Answered</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Your Questions Answered
+          </h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className="border rounded-lg overflow-hidden">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className={`w-full text-left px-6 py-4 font-medium text-sm md:text-base flex justify-between items-center ${
+                  className={`w-full text-left px-6 py-4 font-medium text-sm md:text-base flex justify-between items-center transition-colors duration-200 ${
                     activeIndex === index
                       ? "bg-green-100 text-green-800"
                       : "bg-gray-50 text-gray-800"
                   }`}
                 >
                   {faq.question}
-                  <span className="ml-4">
-                    {activeIndex === index ? "▲" : "▼"}
-                  </span>
+                  <span className="ml-4">{activeIndex === index ? "▲" : "▼"}</span>
                 </button>
-                {activeIndex === index && faq.answer && (
-                  <div className="px-6 pb-4 text-sm text-gray-600">
-                    {faq.answer}
-                  </div>
+                {activeIndex === index && (
+                  <div className="px-6 pb-4 text-sm text-gray-600">{faq.answer}</div>
                 )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right: Image */}
+        {/* Right: Doctor Image */}
         <div className="w-full md:w-1/2 flex justify-center">
           <img
             src={doctorImg}
             alt="Doctor holding a question mark"
-            className="rounded-2xl max-w-sm h-[400px] md:max-w-md"
+            className="rounded-2xl max-w-sm md:max-w-md h-[400px] object-cover"
           />
         </div>
       </div>
 
       {/* Bottom: Info Cards */}
-      <div className="flex justify-center gap-30  flex-wrap mt-16 w-full">
+      <div className="flex justify-center gap-10 flex-wrap mt-16 w-full">
         {infoCards.map((card, index) => (
           <div
             key={index}
@@ -103,9 +103,7 @@ const Question = () => {
             <div className="flex items-center justify-center w-10 h-10 bg-green-600 rounded-full text-white text-lg font-semibold mb-4">
               ?
             </div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-900">
-              {card.title}
-            </h3>
+            <h3 className="text-lg font-semibold mb-2 text-gray-900">{card.title}</h3>
             <p className="text-sm text-gray-600">{card.description}</p>
           </div>
         ))}

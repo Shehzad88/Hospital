@@ -1,5 +1,5 @@
-import React from 'react'
-import statImg from '../assets/32.jpg';
+import React from 'react';
+import statImg from '../assets/32.jpg'; // Make sure this path is correct
 
 const HealthStat = () => {
   return (
@@ -47,7 +47,7 @@ const HealthStat = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HealthStat
+export default HealthStat;

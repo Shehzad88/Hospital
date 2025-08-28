@@ -11,7 +11,7 @@ const WellnessHero = () => {
       />
 
       {/* Overlay */}
-      
+      <div className="absolute inset-0 bg-black/40"></div> {/* Optional dark overlay for contrast */}
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
@@ -34,10 +34,10 @@ const WellnessHero = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <button className="bg-amber-200 shadow shadow-lg shadow-white cursor-pointer hover:bg-amber-300 text-black px-6 py-3 rounded-full font-medium">
+          <button className="bg-amber-200 shadow-lg cursor-pointer hover:bg-amber-300 text-black px-6 py-3 rounded-full font-medium">
             Schedule a Consultation
           </button>
-          <button className="bg-blue-950 cursor-pointer shadow shadow-lg shadow-white hover:bg-blue-900 text-white px-6 py-3 rounded-full font-medium">
+          <button className="bg-blue-950 shadow-lg cursor-pointer hover:bg-blue-900 text-white px-6 py-3 rounded-full font-medium">
             Contact Us
           </button>
         </div>

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaEye } from 'react-icons/fa';
-import Navbar from '/src/components/Navbar.jsx';
-import Footer from '/src/components/Footer.jsx';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
+// ✅ Import your images
+import bgImage from '../assets/15.jpg';
 
 const LoginContainer = () => {
   const navigate = useNavigate();
@@ -100,7 +103,7 @@ const LoginPortal = () => {
       {/* Hero Image */}
       <div className="relative w-full h-[220px]">
         <img
-          src="/src/assets/15.jpg"
+          src={bgImage}
           alt="Background"
           className="w-full h-full object-cover"
         />

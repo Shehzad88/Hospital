@@ -1,13 +1,18 @@
 import React from "react";
 
+// ✅ Import images
+import servicesImg from "../assets/30.jpg";
+import communityImg from "../assets/29.webp";
+
 export default function LearnMoreSection() {
   return (
     <div className="bg-white py-12 px-6 text-center font-sans">
       <h2 className="text-3xl font-semibold mb-10">Learn More About Us</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {/* Services Card */}
         <div className="bg-white rounded-2xl shadow-md overflow-hidden">
           <img
-            src="/src/assets/30.jpg"
+            src={servicesImg}
             alt="Our Comprehensive Services"
             className="w-full h-60 object-cover"
           />
@@ -22,9 +27,10 @@ export default function LearnMoreSection() {
           </div>
         </div>
 
+        {/* Community Impact Card */}
         <div className="bg-white rounded-2xl shadow-md overflow-hidden">
           <img
-            src="/src/assets/29.webp"
+            src={communityImg}
             alt="Our Community Impact"
             className="w-full h-60 object-cover"
           />

@@ -1,11 +1,11 @@
 // src/components/HelpCenter.jsx
 import React from 'react';
 import aboutImg from '../assets/5.jpg';
-import Question from '/src/components/Question.jsx';
-import Navbar from '../components/Navbar.jsx';
-import ContactInfo from '/src/components/ContactInfo.jsx'; // Import ContactInfo if needed
-import ServiceFAQs from '/src/components/ServiceFAQs.jsx'; // Import ServiceFAQs if needed
-import Footer  from '../components/Footer.jsx'; // Import Footer if needed
+import Question from './Question.jsx';
+import Navbar from './Navbar.jsx';
+import ContactInfo from './ContactInfo.jsx';
+import ServiceFAQs from './ServiceFAQs.jsx';
+import Footer from './Footer.jsx';
 
 const HelpCenter = () => {
   return (
@@ -17,6 +17,8 @@ const HelpCenter = () => {
           alt="Help Center"
           className="h-full w-full object-cover object-top absolute -top-10 inset-x-0 z-0"
         />
+
+        {/* Navbar */}
         <div className="absolute top-0 left-0 w-full z-30">
           <Navbar />
         </div>
@@ -37,12 +39,12 @@ const HelpCenter = () => {
       </div>
 
       {/* Main Content */}
-      <Question />
-      <ContactInfo/>
-      <ServiceFAQs />
-      <Footer />
-
-      {/* Optional: Add any additional sections or components as needed */}
+      <div className="relative z-10 bg-white">
+        <Question />
+        <ContactInfo />
+        <ServiceFAQs />
+        <Footer />
+      </div>
     </div>
   );
 };

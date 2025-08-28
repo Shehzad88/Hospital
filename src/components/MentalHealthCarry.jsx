@@ -1,20 +1,22 @@
 import React from "react";
 import { MessageSquareQuote } from "lucide-react";
+import mentalCareImg from "../assets/48.jpg"; // ✅ Import image
 
 const MentalHealthCare = () => {
   return (
     <div className="min-h-screen bg-[#e3efe7] flex items-center justify-center p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full items-center">
         
+        {/* Left: Image */}
         <div className="overflow-hidden rounded-2xl shadow-md">
           <img
-            src="/src/assets/48.jpg"
+            src={mentalCareImg} // ✅ Use imported image
             alt="Mental health support"
             className="w-full h-[520px] object-cover"
           />
         </div>
 
-        
+        {/* Right: Text & Quote */}
         <div className="space-y-6">
           <h1 className="text-3xl md:text-4xl font-semibold leading-snug text-gray-800">
             Comprehensive & Personalized <br />

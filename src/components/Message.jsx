@@ -22,37 +22,15 @@ const initialPatients = [
 ];
 
 const defaultChat = [
-  {
-    sender: 'patient',
-    message: `Hi Doctor, I've been feeling more tired than usual. Should I be concerned?`,
-    time: '11:12 AM',
-  },
-  {
-    sender: 'doctor',
-    message:
-      'Fatigue and headaches can be caused by several things. Any changes in sleep or eating habits?',
-    time: '11:20 AM',
-  },
-  {
-    sender: 'patient',
-    message: `Yes, I've been sleeping less and skipping meals.`,
-    time: '11:22 AM',
-  },
-  {
-    sender: 'doctor',
-    message:
-      'Try to rest, hydrate, and eat well. Also track headaches: time, intensity, and triggers.',
-    time: '11:30 AM',
-  },
-  {
-    sender: 'patient',
-    message: 'Okay, I’ll do that. Should I avoid screen time for now?',
-    time: '11:32 AM',
-  },
+  { sender: 'patient', message: `Hi Doctor, I've been feeling more tired than usual. Should I be concerned?`, time: '11:12 AM' },
+  { sender: 'doctor', message: 'Fatigue and headaches can be caused by several things. Any changes in sleep or eating habits?', time: '11:20 AM' },
+  { sender: 'patient', message: `Yes, I've been sleeping less and skipping meals.`, time: '11:22 AM' },
+  { sender: 'doctor', message: 'Try to rest, hydrate, and eat well. Also track headaches: time, intensity, and triggers.', time: '11:30 AM' },
+  { sender: 'patient', message: 'Okay, I’ll do that. Should I avoid screen time for now?', time: '11:32 AM' },
 ];
 
 const Message = () => {
-  const [patients, setPatients] = useState(initialPatients);
+  const [patients] = useState(initialPatients);
   const [selectedPatientId, setSelectedPatientId] = useState(patients[0].id);
   const [messagesMap, setMessagesMap] = useState(
     Object.fromEntries(patients.map((p) => [p.id, [...defaultChat]]))
@@ -63,7 +41,7 @@ const Message = () => {
   const selectedPatient = patients.find((p) => p.id === selectedPatientId);
 
   const handleSendMessage = () => {
-    if (inputMessage.trim() === '') return;
+    if (!inputMessage.trim()) return;
 
     const newMessage = {
       sender: 'doctor',
@@ -71,12 +49,10 @@ const Message = () => {
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     };
 
-    const updatedMessages = {
+    setMessagesMap({
       ...messagesMap,
       [selectedPatientId]: [...selectedMessages, newMessage],
-    };
-
-    setMessagesMap(updatedMessages);
+    });
     setInputMessage('');
   };
 
@@ -93,9 +69,7 @@ const Message = () => {
           <nav className="space-y-4">
             <p className="font-semibold text-gray-700">GENERAL</p>
             <ul className="space-y-2">
-              <li className="text-gray-600 cursor-pointer">
-  <Link to="/doctor">Dashboard</Link>
-</li>
+              <li className="text-gray-600 cursor-pointer"><Link to="/doctor">Dashboard</Link></li>
               <li className="text-gray-600 cursor-pointer">Activity</li>
               <li className="text-gray-600 cursor-pointer">Appointments</li>
               <li className="text-blue-500 font-semibold cursor-pointer">Message</li>
@@ -182,17 +156,11 @@ const Message = () => {
                 <div
                   key={index}
                   className={`max-w-lg p-3 rounded-lg shadow ${
-                    msg.sender === 'doctor'
-                      ? 'self-end bg-blue-100'
-                      : 'self-start bg-white'
+                    msg.sender === 'doctor' ? 'self-end bg-blue-100' : 'self-start bg-white'
                   }`}
                 >
                   {msg.message}
-                  <p
-                    className={`text-xs text-gray-400 mt-1 ${
-                      msg.sender === 'doctor' ? 'text-right' : ''
-                    }`}
-                  >
+                  <p className={`text-xs text-gray-400 mt-1 ${msg.sender === 'doctor' ? 'text-right' : ''}`}>
                     {msg.time}
                   </p>
                 </div>

@@ -2,8 +2,12 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { FaHeart, FaComment, FaRetweet, FaEllipsisH } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
+// ✅ Import images
 import headerBg from "/src/assets/97.png";
-import { useNavigate } from "react-router-dom"; // ✅ Import navigate
+import postImg1 from "/src/assets/6.jpg";
+import postImg2 from "/src/assets/26.jpg";
 
 const posts = [
   {
@@ -11,7 +15,7 @@ const posts = [
     username: "Panasapch",
     time: "5 minutes ago",
     caption: "A great day when you are confident in yourself!!",
-    image: "/src/assets/6.jpg",
+    image: postImg1,
     likes: 17,
     comments: 3,
   },
@@ -20,7 +24,7 @@ const posts = [
     username: "Therapist",
     time: "2 hours ago",
     caption: "A calm mind, a peaceful soul, a powerful you.",
-    image: "/src/assets/26.jpg",
+    image: postImg2,
     likes: 92,
     comments: 13,
   },
@@ -52,7 +56,7 @@ const PostCard = ({ post }) => (
 );
 
 export default function PostGallery() {
-  const navigate = useNavigate(); // ✅ useNavigate hook
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-[#fffaf3] flex flex-col">
@@ -86,7 +90,7 @@ export default function PostGallery() {
               📰 Feed
             </button>
             <button
-              onClick={() => navigate("/account")} // ✅ Correctly using navigate
+              onClick={() => navigate("/account")}
               className="block w-full text-left cursor-pointer hover:bg-green-500 hover:text-white p-2 rounded-full"
             >
               👤 Account

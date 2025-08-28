@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import guideImg from '../assets/37.jpg'; // Import the image correctly
 
 const GuidePrinciples = () => {
   return (
@@ -8,43 +9,26 @@ const GuidePrinciples = () => {
         <h2 className="text-3xl font-semibold text-gray-900 mb-4">The FlamSafe Guiding Principles</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="flex items-start gap-3">
-            <div className="w-6 h-6 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">*</div>
-            <div>
-              <p className="text-lg font-semibold text-gray-900">Compassion</p>
-              <p className="text-sm text-gray-600">Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor vel sodales sed nibh ut.</p>
+          {[
+            { title: 'Compassion', desc: 'Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor vel sodales sed nibh ut.' },
+            { title: 'Integrity', desc: 'Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor vel sodales sed nibh ut.' },
+            { title: 'Excellence', desc: 'Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor vel sodales sed nibh ut.' },
+            { title: 'Collaboration', desc: 'Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor vel sodales sed nibh ut.' },
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-start gap-3">
+              <div className="w-6 h-6 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">*</div>
+              <div>
+                <p className="text-lg font-semibold text-gray-900">{item.title}</p>
+                <p className="text-sm text-gray-600">{item.desc}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="w-6 h-6 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">*</div>
-            <div>
-              <p className="text-lg font-semibold text-gray-900">Integrity</p>
-              <p className="text-sm text-gray-600">Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor vel sodales sed nibh ut.</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="w-6 h-6 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">*</div>
-            <div>
-              <p className="text-lg font-semibold text-gray-900">Excellence</p>
-              <p className="text-sm text-gray-600">Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor vel sodales sed nibh ut.</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="w-6 h-6 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">*</div>
-            <div>
-              <p className="text-lg font-semibold text-gray-900">Collaboration</p>
-              <p className="text-sm text-gray-600">Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor vel sodales sed nibh ut.</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
       <div className="md:w-1/2 mt-8 md:mt-0 md:pl-12 relative">
         <img
-          src="/src/assets/37.jpg"
+          src={guideImg}
           alt="Professionals smiling"
           className="rounded-2xl w-full h-auto object-cover"
         />
@@ -54,7 +38,7 @@ const GuidePrinciples = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default GuidePrinciples
+export default GuidePrinciples;

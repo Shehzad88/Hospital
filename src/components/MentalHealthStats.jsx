@@ -1,21 +1,30 @@
-import React from 'react'
+import React from "react";
+import statsImg from "../assets/38.jpg"; // ✅ Import image
 
 const MentalHealthStats = () => {
   return (
-     <div className="flex flex-col md:flex-row items-center justify-between p-8 bg-white">
+    <div className="flex flex-col md:flex-row items-center justify-between p-8 bg-white">
+      {/* Left: Image */}
       <div className="md:w-1/2 mb-6 md:mb-0">
         <img
-          src="/src/assets/38.jpg"
+          src={statsImg} // ✅ Use imported image
           alt="Smiling person in a consultation"
           className="rounded-2xl w-full h-auto object-cover"
         />
       </div>
 
+      {/* Right: Stats Content */}
       <div className="md:w-1/2 md:pl-12 text-center md:text-left">
-        <p className="text-sm uppercase tracking-wide text-green-600 font-medium mb-2">Statistic</p>
-        <h2 className="text-3xl font-semibold text-gray-900 mb-4">Mental Health by the Numbers</h2>
+        <p className="text-sm uppercase tracking-wide text-green-600 font-medium mb-2">
+          Statistic
+        </p>
+        <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+          Mental Health by the Numbers
+        </h2>
         <p className="text-gray-600 mb-8">
-          Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor vel sodales sed nibh ut. Ac fringilla fames eget aliquet. Gravida placerat viverra purus sed ac ultrices sem nulla.
+          Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor vel
+          sodales sed nibh ut. Ac fringilla fames eget aliquet. Gravida
+          placerat viverra purus sed ac ultrices sem nulla.
         </p>
 
         <div className="grid grid-cols-2 gap-x-8 gap-y-6">
@@ -38,7 +47,7 @@ const MentalHealthStats = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MentalHealthStats
+export default MentalHealthStats;

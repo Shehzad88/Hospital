@@ -1,4 +1,5 @@
 import React from "react";
+import ceoImg from "../assets/39.jpg"; // ✅ import image from src/assets
 
 const AboutUsSection = () => {
   return (
@@ -16,7 +17,7 @@ const AboutUsSection = () => {
 
           <div className="flex items-center bg-white rounded-xl shadow-sm border p-4 gap-4">
             <img
-              src="/src/assets/39.jpg"
+              src={ceoImg} // ✅ use imported image
               alt="CEO"
               className="w-40 h-44 rounded-xl object-cover"
             />
