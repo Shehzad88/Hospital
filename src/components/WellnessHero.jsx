@@ -1,17 +1,18 @@
 import React from 'react';
+import heroImage from '../assets/50.png'; // ✅ import the image
 
 const WellnessHero = () => {
   return (
     <div className="relative h-screen w-full">
       {/* Background Image */}
       <img
-        src="/src/assets/50.png"
+        src={heroImage} // use the imported image
         alt="Wellness Hero"
         className="h-full w-full object-cover absolute inset-0"
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div> {/* Optional dark overlay for contrast */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">

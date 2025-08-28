@@ -1,8 +1,10 @@
 import React from 'react';
-
 import Navbar from '../components/Navbar.jsx';
 import AppointmentForm from '../components/AppointmentForm.jsx';
 import Footer from '../components/Footer.jsx';
+
+// ✅ Import image from src/assets for proper bundling
+import heroImg from '../assets/2.jpg';
 
 const BookAppointment = () => {
   return (
@@ -10,7 +12,7 @@ const BookAppointment = () => {
       {/* Hero Section */}
       <div className="relative h-screen w-full overflow-hidden">
         <img
-          src="/assets/2.jpg"   // ✅ Image served from public/assets
+          src={heroImg}
           alt="Help Center"
           className="h-full w-full object-cover object-top absolute -top-10 inset-x-0 z-0"
         />

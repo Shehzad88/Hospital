@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiPhone, FiMail, FiUser } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo (3).png'; // ✅ Import your logo from src/assets
 
 const Navbar = () => {
   const [showMore, setShowMore] = useState(false);
@@ -10,7 +11,7 @@ const Navbar = () => {
     <nav className="relative flex items-center justify-between px-6 py-4 text-green-500 bg-gradient-to-b from-black to-transparent">
       {/* Logo */}
       <div className="flex items-center">
-        <img src="/src/assets/logo (3).png" alt="Logo" className="h-16 w-auto" />
+        <img src={logo} alt="Logo" className="h-16 w-auto" />
       </div>
 
       {/* Desktop Navigation Links */}
@@ -24,10 +25,10 @@ const Navbar = () => {
           onMouseEnter={() => setShowMore(true)}
           onMouseLeave={() => setShowMore(false)}
         >
-          <span className="cursor-pointer p-5 transition hover:text-green-600">More</span>
+          <span className="cursor-pointer transition hover:text-green-600 px-2 py-1">More</span>
 
           {showMore && (
-            <div className="absolute top-8 left-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10">
+            <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg z-10">
               <Link
                 to="/help"
                 className="block px-4 py-2 text-black hover:bg-green-600 hover:text-white transition"
@@ -83,7 +84,6 @@ const Navbar = () => {
           ☰
         </button>
 
-        {/* Optional: Mobile menu */}
         {mobileMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white text-black shadow-md flex flex-col p-4 gap-2 z-20">
             <Link to="/" className="hover:text-green-600">Home</Link>
